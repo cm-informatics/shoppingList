@@ -12,7 +12,6 @@
 		AA4DCC7F1CE345D200B994AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4DCC7E1CE345D200B994AF /* Assets.xcassets */; };
 		AA4DCC821CE345D200B994AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4DCC801CE345D200B994AF /* LaunchScreen.storyboard */; };
 		AA4DCC8A1CE3462800B994AF /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DCC891CE3462800B994AF /* ShoppingTableViewController.swift */; };
-		AAFB52A51D36ACB300E03E75 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AAFB52A41D36ACB300E03E75 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		AA4DCC811CE345D200B994AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA4DCC831CE345D200B994AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA4DCC891CE3462800B994AF /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingTableViewController.swift; path = ../ShoppingTableViewController.swift; sourceTree = "<group>"; };
-		AAFB52A41D36ACB300E03E75 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +56,6 @@
 			children = (
 				AA4DCC771CE345D200B994AF /* AppDelegate.swift */,
 				AA4DCC891CE3462800B994AF /* ShoppingTableViewController.swift */,
-				AAFB52A41D36ACB300E03E75 /* README.md */,
 				AA4DCC7B1CE345D200B994AF /* Main.storyboard */,
 				AA4DCC7E1CE345D200B994AF /* Assets.xcassets */,
 				AA4DCC801CE345D200B994AF /* LaunchScreen.storyboard */,
@@ -138,7 +135,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAFB52A51D36ACB300E03E75 /* README.md in Sources */,
 				AA4DCC781CE345D200B994AF /* AppDelegate.swift in Sources */,
 				AA4DCC8A1CE3462800B994AF /* ShoppingTableViewController.swift in Sources */,
 			);
