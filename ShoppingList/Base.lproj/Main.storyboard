@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1e0-Vt-QFn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1e0-Vt-QFn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Shopping Table View Controller-->
+        <!--Shopping List-->
         <scene sceneID="hhR-Eb-BGf">
             <objects>
                 <tableViewController id="kNd-ii-6pU" customClass="ShoppingTableViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                             <outlet property="delegate" destination="kNd-ii-6pU" id="hGy-gl-xbZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="PqF-eO-lC9">
+                    <navigationItem key="navigationItem" title="Shopping List" id="PqF-eO-lC9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="H3z-hh-tg8">
                             <connections>
                                 <action selector="updateList:" destination="kNd-ii-6pU" id="sPG-Of-JgS"/>
@@ -39,7 +39,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHr-SG-FhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421.5" y="40.5"/>
+            <point key="canvasLocation" x="1481.5" y="40.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eId-6y-e1x">

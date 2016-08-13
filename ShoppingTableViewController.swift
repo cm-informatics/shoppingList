@@ -64,7 +64,9 @@ class ShoppingTableViewController: UITableViewController {
     @IBAction func updateList(sender: AnyObject)
     {
         let alertView = UIAlertController(title: "Eingabe", message: "Bitte einen Text eingeben", preferredStyle: .Alert)
-        alertView.addTextFieldWithConfigurationHandler(nil)
+        alertView.addTextFieldWithConfigurationHandler { (textField: UITextField) in
+            textField.autocapitalizationType = .Words
+        }
         
         if sender.isKindOfClass(UITableViewCell)
         {
