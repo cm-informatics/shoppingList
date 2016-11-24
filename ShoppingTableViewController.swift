@@ -18,116 +18,112 @@ class ShoppingTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    override func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return shoppingArray.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        // Configure the cell...
-        
-        cell.textLabel?.text = "\(shoppingArray.objectAtIndex(indexPath.row))"
-
+        cell.textLabel?.text = "\(shoppingArray.object(at: indexPath.row))"
         return cell
     }
     
 
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        if editingStyle == .Delete
+        if editingStyle == .delete
         {
-            shoppingArray.removeObjectAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            shoppingArray.removeObject(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        else if editingStyle == .Insert
+        else if editingStyle == .insert
         {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
     
 
-    @IBAction func updateList(sender: AnyObject)
+    @IBAction func updateList(_ sender: AnyObject)
     {
-        let alertView = UIAlertController(title: "Eingabe", message: "Bitte einen Text eingeben", preferredStyle: .Alert)
-        alertView.addTextFieldWithConfigurationHandler { (textField: UITextField) in
-            textField.autocapitalizationType = .Words
+        let alertView = UIAlertController(title: "Eingabe", message: "Bitte einen Text eingeben", preferredStyle: .alert)
+        alertView.addTextField { (textField: UITextField) in
+            textField.autocapitalizationType = .words
         }
-        
-        if sender.isKindOfClass(UITableViewCell)
+    
+        if sender.isKind(of: UITableViewCell.self)
         {
             alertView.textFields?.first?.text = sender.textLabel!!.text
         }
         
-        
-        alertView.addAction(UIAlertAction(title: "OK", style: .Default, handler:
+        alertView.addAction(UIAlertAction(title: "OK", style: .default, handler:
         {
             (action: UIAlertAction) in
             if let text = alertView.textFields?.first?.text
             {
-                if (sender.isKindOfClass(UIBarButtonItem))
+                if sender.isKind(of: UIBarButtonItem.self)
                 {
-                    self.shoppingArray.addObject(text)
+                    self.shoppingArray.add(text)
                     self.tableView.reloadData()
                 }
                 else
                 {
-                    let index = self.shoppingArray.indexOfObject(sender.textLabel!!.text!)
-                    self.shoppingArray.replaceObjectAtIndex(index, withObject: text)
+                    let index = self.shoppingArray.index(of: sender.textLabel!!.text!)
+                    self.shoppingArray.replaceObject(at: index, with: text)
                     self.tableView.reloadData()
                 }
 
             }
         }))
         
-        alertView.addAction(UIAlertAction(title: "Abbrechen", style: .Cancel, handler: nil))
+        alertView.addAction(UIAlertAction(title: "Abbrechen", style: .cancel, handler: nil))
         
-        self.presentViewController(alertView, animated: true, completion: nil)
+        self.present(alertView, animated: true, completion: nil)
     }
     
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath)
     {
         let itemToMove = shoppingArray[fromIndexPath.row]
-        shoppingArray.removeObjectAtIndex(fromIndexPath.row)
-        shoppingArray.insertObject(itemToMove, atIndex: toIndexPath.row)
+        shoppingArray.removeObject(at: fromIndexPath.row)
+        shoppingArray.insert(itemToMove, at: toIndexPath.row)
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let cell = tableView.cellForRow(at: indexPath)
         updateList(cell!)
     }
     
-    override func tableView(tableView: UITableView, shouldShowMenuForRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool
     {
         return true
     }
     
-    override func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        if ( action == #selector(NSObject.copy(_:)))
+    override func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        if ( action == #selector(copy(_:)))
         {
             return true
         }
         return false
     }
     
-    override func tableView(tableView: UITableView, performAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        let pasteBoard = UIPasteboard.generalPasteboard()
+    override func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+        let cell = tableView.cellForRow(at: indexPath)
+        let pasteBoard = UIPasteboard.general
         pasteBoard.string = cell?.textLabel?.text
     }
     /*
