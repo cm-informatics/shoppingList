@@ -10,7 +10,8 @@ import UIKit
 
 class ShoppingTableViewController: UITableViewController {
 
-    var shoppingArray: NSMutableArray = ["Butter", "Mehl", "Wasser", "Käse"]
+    //var shoppingArray: NSMutableArray = ["Butter", "Mehl", "Wasser", "Käse"]
+    var shoppingArray: NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,6 +126,27 @@ class ShoppingTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         let pasteBoard = UIPasteboard.general
         pasteBoard.string = cell?.textLabel?.text
+    }
+    
+    // MARK: - Unwind Segues
+    
+    @IBAction func backNavigation(_ sender: UIStoryboardSegue)
+    {
+        if let identifier = sender.identifier
+        {
+            if identifier == "saveItemsUnwind"
+            {
+                let sourceViewController = sender.source as! SupportListTableViewController
+                print("Die gewählten Items sind: \(sourceViewController.selectedItems)")
+                shoppingArray.removeAllObjects()
+                shoppingArray.addObjects(from: sourceViewController.selectedItems)
+                tableView.reloadData()
+            }
+            
+        }
+        else{
+            print("is nil")
+        }
     }
     /*
     // MARK: - Navigation
