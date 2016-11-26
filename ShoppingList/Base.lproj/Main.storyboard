@@ -21,16 +21,38 @@
                             <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7N-HP-zbR">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7N-HP-zbR">
                                     <rect key="frame" x="322" y="7" width="35" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="W5V-Hf-ugJ"/>
+                                        <constraint firstAttribute="width" constant="35" id="fdu-QD-GhV"/>
+                                    </constraints>
                                     <state key="normal" title="Liste"/>
                                     <connections>
                                         <segue destination="V9h-Lr-Wut" kind="show" id="0Dh-4f-XqN"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqq-PE-hqF">
+                                    <rect key="frame" x="12" y="7" width="114" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="114" id="1ER-at-gVH"/>
+                                        <constraint firstAttribute="height" constant="30" id="IKo-2j-G5X"/>
+                                    </constraints>
+                                    <state key="normal" title="Einkauf löschen">
+                                        <color key="titleColor" red="0.91183429959999995" green="0.15032363900000001" blue="0.09089826962" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="deleteList:" destination="kNd-ii-6pU" eventType="touchUpInside" id="jaI-K3-IMX"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="k7N-HP-zbR" firstAttribute="top" secondItem="1S7-Th-kta" secondAttribute="top" constant="7" id="KuH-3u-acW"/>
+                                <constraint firstAttribute="trailing" secondItem="k7N-HP-zbR" secondAttribute="trailing" constant="18" id="Tji-fR-Hd7"/>
+                                <constraint firstItem="Tqq-PE-hqF" firstAttribute="top" secondItem="1S7-Th-kta" secondAttribute="top" constant="7" id="gXh-uN-ofT"/>
+                                <constraint firstItem="Tqq-PE-hqF" firstAttribute="leading" secondItem="1S7-Th-kta" secondAttribute="leading" constant="12" id="kYh-bo-9Ff"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Zui-Zx-Fr4">
@@ -57,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHr-SG-FhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1620" y="41"/>
+            <point key="canvasLocation" x="1620" y="40.929535232383813"/>
         </scene>
         <!--List-->
         <scene sceneID="g3t-Gx-AG4">

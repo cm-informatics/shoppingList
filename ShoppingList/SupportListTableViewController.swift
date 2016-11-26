@@ -79,10 +79,7 @@ class SupportListTableViewController: UITableViewController {
         print(selectedItems)
     }
   
-    /*deinit {
-        print("Killed")
-    }
-     */
+   
     
     /*
     // MARK: - Navigation

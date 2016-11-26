@@ -10,8 +10,8 @@ import UIKit
 
 class ShoppingTableViewController: UITableViewController {
 
-    //var shoppingArray: NSMutableArray = ["Butter", "Mehl", "Wasser", "Käse"]
-    var shoppingArray: NSMutableArray = []
+    var shoppingListArray = Array<String>()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,10 @@ class ShoppingTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
+        if let array = defaults.object(forKey: "ShoppingArray"){
+            shoppingListArray = array as! Array<String>
+        }
     }
 
     // MARK: - Table view data source
@@ -31,14 +35,14 @@ class ShoppingTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return shoppingArray.count
+        return shoppingListArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        cell.textLabel?.text = "\(shoppingArray.object(at: indexPath.row))"
+        cell.textLabel?.text = "\(shoppingListArray[indexPath.row])"
         return cell
     }
     
@@ -49,7 +53,7 @@ class ShoppingTableViewController: UITableViewController {
     {
         if editingStyle == .delete
         {
-            shoppingArray.removeObject(at: indexPath.row)
+            shoppingListArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         else if editingStyle == .insert
@@ -78,14 +82,17 @@ class ShoppingTableViewController: UITableViewController {
             {
                 if sender.isKind(of: UIBarButtonItem.self)
                 {
-                    self.shoppingArray.add(text)
+                    self.shoppingListArray.append(text)
                     self.tableView.reloadData()
+                    self.defaults.set(self.shoppingListArray, forKey: "ShoppingArray")
                 }
                 else
                 {
-                    let index = self.shoppingArray.index(of: sender.textLabel!!.text!)
-                    self.shoppingArray.replaceObject(at: index, with: text)
+                    let index = self.shoppingListArray.index(of: sender.textLabel!!.text!)
+                    self.shoppingListArray[index!] = text
+                    
                     self.tableView.reloadData()
+                    self.defaults.set(self.shoppingListArray, forKey: "ShoppingArray")
                 }
 
             }
@@ -98,9 +105,9 @@ class ShoppingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath)
     {
-        let itemToMove = shoppingArray[fromIndexPath.row]
-        shoppingArray.removeObject(at: fromIndexPath.row)
-        shoppingArray.insert(itemToMove, at: toIndexPath.row)
+        let itemToMove = shoppingListArray[fromIndexPath.row]
+        shoppingListArray.remove(at: fromIndexPath.row)
+        shoppingListArray.insert(itemToMove, at: toIndexPath.row)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -138,15 +145,22 @@ class ShoppingTableViewController: UITableViewController {
             {
                 let sourceViewController = sender.source as! SupportListTableViewController
                 print("Die gewählten Items sind: \(sourceViewController.selectedItems)")
-                shoppingArray.removeAllObjects()
-                shoppingArray.addObjects(from: sourceViewController.selectedItems)
+                
+                shoppingListArray.append(contentsOf: sourceViewController.selectedItems)
                 tableView.reloadData()
+                self.defaults.set(self.shoppingListArray, forKey: "ShoppingArray")
             }
             
         }
         else{
-            print("is nil")
+            print("no unwind identifier found")
         }
+    }
+    
+    @IBAction func deleteList(_ sender: UIButton) {
+        shoppingListArray.removeAll()
+        tableView.reloadData()
+        self.defaults.set(self.shoppingListArray, forKey: "ShoppingArray")
     }
     /*
     // MARK: - Navigation
