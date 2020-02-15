@@ -27,7 +27,7 @@
 ## 2. Step: Install git
 #### Git is pre-installed on most macOS systems
 `brew install git`
-* -
+
 ## 3. Step: Install Node JS
 `brew install node`
 
