@@ -6,9 +6,9 @@
 - Nodejs
 - react-native
 - yarn
+- cucumber
 - Appium Server
 - Android Studio
-- Android Simulator
 - IDE (e.g. VSCode)
 
 ### Optional
@@ -19,7 +19,7 @@
 > **Check the version by entering `git -version` or `node -v` or `yarn -v` or `appium -v`**
 
 # Installation Guideline
-### for macos
+### For macOS
 
 ## 1. Step: Install Homebrew
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
@@ -33,10 +33,18 @@
 ## 4. Step: Install yarn
 `brew install yarn`
 
-## 5. Step: Install
+## 5. Step: Install cucumber
+`npm install cucumber`
+
+## 6. Step: Install Appium
 Appium can be installed in one of two ways: via NPM or by downloading Appium Desktop, which is a graphical, desktop-based way to launch the Appium server.
 
 Appium server(standalone): `npm install -g appium`
+
+## 7. Step: Install Android Studio
+https://developer.android.com/studio/
+
+## 8. Step: Install VSCode
 
 
 ## 1. Step: GIT Clone
