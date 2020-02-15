@@ -64,11 +64,11 @@ Please clone the project from [OnSiteTestAutomationJS](https://gitlab.hce.heidel
 
 ## 3. Run Appium and Android Simulator from docker container 
 
-* Start appium server
-Open a terminal and type `appium`
+#### Start appium server
+* Open a terminal and type `appium`
 
 #### Start Android Simulator
-Open Android Studio, create a device, and run it.
+* Open Android Studio, create a device, and run it.
 
 ### When using a docker image
 ```docker-compose up```
