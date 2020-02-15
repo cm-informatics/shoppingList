@@ -70,7 +70,7 @@ Please clone the project from [OnSiteTestAutomationJS](https://gitlab.hce.heidel
 #### Start Android Simulator
 * Open Android Studio, create a device, and run it.
 
-### When using a docker image
+### When using a docker
 ```docker-compose up```
 
 * at the root of the project folder
