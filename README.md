@@ -43,7 +43,7 @@
 ## 7. Step: Install Appium
 Appium can be installed in one of two ways: via NPM or by downloading Appium Desktop, which is a graphical, desktop-based way to launch the Appium server.
 
-Appium server(standalone): `npm install -g appium`
+Appium server: `npm install -g appium`
 
 ## 8. Step: Install Android Studio
 Visit: https://developer.android.com/studio/
@@ -65,7 +65,7 @@ Please clone the project from [OnSiteTestAutomationJS](https://gitlab.hce.heidel
 ## 3: Run Appium and Android Simulator from docker container 
 ```docker-compose up```
 
-* at the root of the project
+* at the root of the project folder
 
 ## 4: run tests
 ```yarn test:cu```
