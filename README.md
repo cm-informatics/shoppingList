@@ -42,10 +42,12 @@ Appium can be installed in one of two ways: via NPM or by downloading Appium Des
 Appium server(standalone): `npm install -g appium`
 
 ## 7. Step: Install Android Studio
-https://developer.android.com/studio/
+Visit: https://developer.android.com/studio/
 
 ## 8. Step: Install VSCode
+Visit: https://code.visualstudio.com/docs/setup/mac
 
+# Setup Guide
 
 ## 1. Step: GIT Clone
 Please clone the project from [OnSiteTestAutomationJS](https://gitlab.hce.heidelbergcement.com/HCEmbrace/onsitetestautomationjs)
