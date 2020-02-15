@@ -60,12 +60,14 @@ Please clone the project from [OnSiteTestAutomationJS](https://gitlab.hce.heidel
 ## 2: Installation of dependencies
 ```yarn install```
 
-* at the root of the project
+* at the root of the project folder
 
 ## 3: Run Appium and Android Simulator from docker container 
 ```docker-compose up```
 
 * at the root of the project folder
+
+#### You don't need this step when running the test loacally without docker
 
 ## 4: run tests
 ```yarn test:cu```
