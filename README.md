@@ -1,13 +1,22 @@
 # Setup javascript Automation Testing for Android and IOS
 
 ## Prerequisites
+- Homebrew
 - git
 - Nodejs
+- react-native
 - yarn
+- Appium Server
+- Android Studio
+- Android Simulator
+- IDE (e.g. VSCode)
 
-* All Tests are written with wd Package dependecies
+## Optional
+- Appium Desktop
 
-> **Check it by entering `git -v` or `node -v` or `yarn -v`**
+* Please note: All Tests are written with wd Package dependecies
+
+> **Check the version by entering `git -version` or `node -v` or `yarn -v` or `appium -v`**
 
 ## 1. Step: GIT Clone
 Please clone the project from [OnSiteTestAutomationJS](https://gitlab.hce.heidelbergcement.com/HCEmbrace/onsitetestautomationjs)
