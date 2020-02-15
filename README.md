@@ -63,11 +63,17 @@ Please clone the project from [OnSiteTestAutomationJS](https://gitlab.hce.heidel
 * at the root of the project folder
 
 ## 3: Run Appium and Android Simulator from docker container 
+
+#### Start appium server
+Open a terminal and type `appium`
+
+#### Start Android Simulator
+Open Android Studio, create a device, and run it.
+
+### When using a docker image
 ```docker-compose up```
 
 * at the root of the project folder
-
-#### You don't need this step when running the test loacally without docker
 
 ## 4: run tests
 ```yarn test:cu```
