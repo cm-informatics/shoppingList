@@ -11,12 +11,33 @@
 - Android Simulator
 - IDE (e.g. VSCode)
 
-## Optional
+### Optional
 - Appium Desktop
 
-* Please note: All Tests are written with wd Package dependecies
+### Please note: All Tests are written with wd Package dependecies
 
 > **Check the version by entering `git -version` or `node -v` or `yarn -v` or `appium -v`**
+
+# Installation Guideline
+### for macos
+
+## 1. Step: Install Homebrew
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+## 2. Step: Install Node JS
+`brew install node`
+
+## 3. Step: Install react-native
+`npm install -g react-native-cli`
+
+## 4. Step: Install yarn
+`brew install yarn`
+
+## 5. Step: Install
+Appium can be installed in one of two ways: via NPM or by downloading Appium Desktop, which is a graphical, desktop-based way to launch the Appium server.
+
+Appium server(standalone): `npm install -g appium`
+
 
 ## 1. Step: GIT Clone
 Please clone the project from [OnSiteTestAutomationJS](https://gitlab.hce.heidelbergcement.com/HCEmbrace/onsitetestautomationjs)
