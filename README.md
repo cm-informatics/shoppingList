@@ -47,6 +47,7 @@ Visit: https://developer.android.com/studio/
 ## 8. Step: Install VSCode
 Visit: https://code.visualstudio.com/docs/setup/mac
 
+
 # Setup Guide
 
 ## 1. Step: GIT Clone
