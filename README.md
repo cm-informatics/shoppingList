@@ -57,14 +57,14 @@ Visit: https://code.visualstudio.com/docs/setup/mac
 ## 1. Step: GIT Clone
 Please clone the project from [OnSiteTestAutomationJS](https://gitlab.hce.heidelbergcement.com/HCEmbrace/onsitetestautomationjs)
 
-## 2: Installation of dependencies
+## 2. Installation of dependencies
 ```yarn install```
 
 * at the root of the project folder
 
-## 3: Run Appium and Android Simulator from docker container 
+## 3. Run Appium and Android Simulator from docker container 
 
-#### Start appium server
+* Start appium server
 Open a terminal and type `appium`
 
 #### Start Android Simulator
